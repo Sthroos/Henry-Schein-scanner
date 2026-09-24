@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Henry Schein Barcode Bestellen",
+  "version": "1.0.42",
+  "description": "Lees barcodes uit de OPN-2001-scanner en voeg ze automatisch toe aan het Henry Schein winkelmandje.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "henryschein-barcode-bestellen@degrotedokter",
+      "strict_min_version": "151.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": ["scripting", "tabs", "storage"],
+  "host_permissions": ["https://www.henryschein.nl/*"],
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "96": "icon-96.png",
+    "128": "icon-128.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Henry Schein Barcode Bestellen",
+    "default_icon": {
+      "16": "icon-16.png",
+      "32": "icon-32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.henryschein.nl/*"],
+      "js": ["content-panel.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content-panel.css"],
+      "matches": ["https://www.henryschein.nl/*"]
+    }
+  ]
+}

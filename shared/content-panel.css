@@ -1,0 +1,96 @@
+#panel {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 400px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  z-index: 2147483647;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  background: #f7f8fa;
+  border: 1px solid #c7cdd3;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .25);
+  padding-bottom: 10px;
+  display: none;
+  flex-direction: column;
+}
+#panel * { box-sizing: border-box; }
+#panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #003d66;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+}
+#panel-header button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+#panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: #555; margin: 0 0 6px; }
+#panel section {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 10px 0;
+}
+#panel button {
+  background: #003d66;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+#panel button:disabled { background: #9aa5ac; cursor: not-allowed; }
+#panel button.secondary { background: #6b7680; }
+#panel button + button { margin-left: 6px; }
+#panel table { width: 100%; border-collapse: collapse; font-size: 12px; }
+#panel th, #panel td { text-align: left; padding: 4px 6px; border-bottom: 1px solid #eee; }
+#panel input.qty { width: 48px; }
+#panel .status-pending { color: #888; }
+#panel .status-sent { color: #2a7a2a; }
+#panel .status-error { color: #c0392b; font-weight: 600; }
+#panel .log { font-size: 11px; color: #666; margin-top: 6px; white-space: pre-wrap; }
+#panel .row-actions button { padding: 2px 6px; font-size: 11px; }
+/* The panel itself is the scroll container; pinning the action buttons to its bottom
+   means a long queue never pushes "Ga naar Henry Schein" out of reach. */
+#panel .actions {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 10px 0 2px;
+  margin-top: 4px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#panel .actions button + button { margin-left: 0; }
+#panel #emptyHint { margin: 8px 10px 0; font-style: italic; color: #666; }
+#panel .item-name { font-size: 11px; color: #666; font-weight: normal; margin-top: 2px; }
+#panel .item-price { font-size: 11px; color: #444; margin-top: 2px; }
+#panel .item-error { font-size: 11px; color: #c0392b; margin-top: 2px; }
+#panel .hand-scan-label { display: block; font-size: 11px; color: #555; margin-top: 10px; }
+#panel #handScanInput {
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 8px;
+  font-size: 13px;
+  border: 1px solid #c7cdd3;
+  border-radius: 4px;
+}
+#panel #handScanInput:focus { outline: 2px solid #003d66; outline-offset: 0; }
+#panel-version { text-align: right; font-size: 10px; color: #999; padding: 4px 10px 0; }
