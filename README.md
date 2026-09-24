@@ -4,7 +4,7 @@ Browserextensie (Chrome/Edge + Firefox 151+) die barcodes van een Opticon OPN-20
 pocket memory scanner uitleest via Web Serial en automatisch toevoegt aan het
 winkelmandje op henryschein.nl, via de eigen ingelogde sessie van de gebruiker.
 
-**Status: lokale ontwikkeling.** Nog geen publieke store-listing.
+**Status: lokale ontwikkeling.** Nog geen publieke store-listing, wel aangevraagd bij Mozilla.
 
 ## Mapstructuur
 
